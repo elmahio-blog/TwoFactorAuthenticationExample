@@ -1,0 +1,11 @@
+﻿<html>
+<body>
+    <h1>Enable two-factor authentication</h1>
+    <form method="post">
+        <img src="@ViewBag.BarcodeImageUrl" /><br />
+        Setup code: @ViewBag.SetupCode<br />
+        Input security code: <input name="inputCode" /><br/>
+        <input type="submit" />
+    </form>
+</body>
+</html>

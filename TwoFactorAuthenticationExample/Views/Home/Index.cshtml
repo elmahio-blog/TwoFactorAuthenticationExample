@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @if (CurrentUser.SignedInUser == null)
+    {
+        <a href="/home/login">Sign in</a>
+    }
+    else
+    {
+        <a href="/home/logout">Sign out</a><br/>
+
+        @if (CurrentUser.SignedInUser.TwoFactorEnabled)
+        {
+            <a href="/twofactorauthentication/disable">Disable two-factor</a>
+        }
+        else
+        {
+            <a href="/twofactorauthentication/enable">Enable two-factor</a>
+        }
+    }
+</div>
